@@ -1,9 +1,9 @@
 import React from "react";
 import tw from "twin.macro";
-import LandingPageNavBar from "@/components/navbar/LandingPageNavBar";
+// import LandingPageNavBar from "@/components/navbar/LandingPageNavBar";
 import Link from "next/link";
 import { TryForFree } from "../common/CButton";
-import Image from "next/image";
+// import Image from "next/image";
 const Container = tw.header`box-border lg:min-h-[780px] bg-[#07df9a] lg:pt-4 pt-8 pb-4 lg:pb-0`;
 const SubContainer = tw.div`box-border max-w-screen-xl mx-auto p-2 lg:p-0`;
 const Intro = tw.div`box-border lg:min-h-[200px] lg:py-16 lg:flex lg:justify-between items-center`;
@@ -13,7 +13,7 @@ const P = tw.p`text-[#241f21] font-cairo font-semibold lg:text-xl text-2xl leadi
 const ButtonsBox = tw.div`box-border flex justify-start gap-4 items-center`;
 const GetSarted = tw.button`font-cairo font-bold text-[1.35rem] text-[#f3eff5] bg-[#241f21] border-2 border-[#241f21] p-2 hover:bg-[#2d282a]  hover:cursor-pointer`;
 const ImgBox = tw.div`hidden lg:block box-border lg:w-[604px] w-[200px] lg:h-[604px] h-[200px] rounded-full `;
-const SpanWhite = tw.span`hidden bg-[white] lg:absolute z-[2] text-[#07de99] lg:inline`;
+const SpanWhite = tw.span`hidden text-white lg:inline`;
 const SpanWhiteMobile = tw.span`inline lg:hidden text-white`;
 function Hero() {
   return (

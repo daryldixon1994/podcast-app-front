@@ -22,3 +22,12 @@
   background-size: cover;
   background-position: center;
 }
+#register-bg-illus {
+  background-image: url("/images/illus.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.aside-narrator {
+  box-shadow: 4px 0px 7px 0px rgba(0, 0, 0, 0.1);
+}

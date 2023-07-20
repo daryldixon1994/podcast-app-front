@@ -33,10 +33,14 @@ function LandingPageNavBar() {
         </Ul>
         <Connect>
           <Login>
-            <Link href="/login">Login</Link>
+            <Link href="/login" style={{ all: "unset" }}>
+              Login
+            </Link>
           </Login>
           <GetSarted>
-            <Link href="/register">Get Started</Link>
+            <Link href="/register" style={{ all: "unset" }}>
+              Get Started
+            </Link>
           </GetSarted>
         </Connect>
       </Container>
