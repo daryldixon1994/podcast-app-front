@@ -1,13 +1,12 @@
 "use client";
 import { Form, Checkbox } from "semantic-ui-react";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import tw from "twin.macro";
 import RegisterUser from "@/components/forms/RegisterUser";
 import RegisterNarrator from "@/components/forms/RegisterNarrator";
-// import { useSession } from "next-auth/react";
-// import { useRouter } from "next/router";
-// import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Container = tw.div`box-border lg:h-[100vh] lg:flex`;
 const RegisterContainer = tw.div`box-border lg:w-[35%] p-4 overflow-y-scroll`;
@@ -24,8 +23,15 @@ export const metadata = {
 };
 function Register() {
   const [value, setValue] = React.useState("User");
-  // const router = useRouter();
- 
+  const router = useRouter();
+  const session = useSession();
+
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      return router.push("/user-dashboard/feeds");
+    }
+  }, [router, session.status]);
+
   return (
     <Container>
       <RegisterContainer>

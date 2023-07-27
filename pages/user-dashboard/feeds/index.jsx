@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 
 function Feeds() {
   const session = useSession();
+  console.log("session", session);
   const router = useRouter();
   // const [token, setToken] = useState();
   // useEffect(() => {
@@ -16,11 +17,14 @@ function Feeds() {
     if (!window.localStorage.getItem("token")) {
       router.push("/login");
     }
+    if (session.status === "loading") {
+      return router.push("/loading");
+    }
+    if (session.status === "unauthenticated") {
+      return router.push("/login");
+    }
   });
 
-  if (session.status === "loading") {
-    return <div>Loading ....</div>;
-  }
   return <div>Feeds</div>;
 }
 Feeds.getLayout = function getLayout(page) {
